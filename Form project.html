@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="Form project.css" />
+</head>
+
+<body>
+    <p id="thanku"></p>
+    <form action="" name="regform">
+        <div class="border">
+            <h2>
+                Registration Form
+            </h2>
+            <div class="body">
+                <div class="row">
+                    <div> <label>First Name</label></div>
+                    <div class="col"><input onfocusout="check('FirstName','firsterror','*Fill your First Name')"
+                            id="FirstName" class="input" type="text" placeholder="Enter your fisrt name" />
+                        <p id="firsterror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Last Name</label></div>
+                    <div class="col"><input onfocusout="check('LastName','lasterror','*Fill your Last Name')"
+                            id="LastName" class="input" type="text" placeholder="Enter your last name" />
+                        <p id="lasterror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div> <label>Date of Birth </label></div>
+                    <div class="col"><input class="date" onfocusout="birth()" id="date" type="date" min="1980-01-01"
+                            max="2006-12-31" />
+                        <p id="dateerror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Gender</label></div>
+                    <div class="col"><label class="Gender"><input onclick="GenderVerify()" type="radio" name="Gender"
+                                id="Gender" value="Male" />Male</label>
+                        <label class="Gender"><input type="radio" onclick="GenderVerify()" name="Gender" id="Gender"
+                                value="Female" />Female</label>
+                        <label class="Gender"><input type="radio" onclick="GenderVerify()" name="Gender" id="Gender"
+                                value="Other Gender" />Other Gender</label>
+                        <p id="Gendererror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label class="mail">E-mail</label></div>
+                    <div class="col"><input onfocusout="check('email', 'emailerror', '*Fill the Email')" id="email"
+                            class="input" type="email" placeholder="Enter your email" />
+                        <p id="emailerror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label class="pass">Password</label></div>
+                    <div class="col"><input id="password"
+                            onfocusout="check('password', 'passworderror', '*Enter the Password')" class="input"
+                            type="password" placeholder="Enter your password" />
+                        <img class="eye" id="eye" onclick="passeye()" src="eye1.svg" />
+                        <img class="eye" id="eye" onclick="passeye()" src="eye.svg" />
+                        <p id="passworderror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div> <label>Timing for Class</label></div>
+                    <div class="col"> <label class="time"><input type="checkbox" name="time" onclick="Timing()"
+                                id="timeten" value="10AM to 1PM" />10AM-1AM</label>
+                        <label class="time"><input name="time" type="checkbox" name="time" onclick="Timing()"
+                                id="timetwo" value="2PM to 5PM" />2PM-5PM</label>
+                        <label class="time"><input name="time" type="checkbox" name="time" onclick="Timing()"
+                                id="timefive" value="5PM to 7PM" />5PM-7PM</label>
+                        <label class="time"><input name="time" type="checkbox" name="time" onclick="Timing()"
+                                id="timeany" value="Any Other" />Any Timing</label>
+                        <p id="timeerror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Address</label></div>
+                    <div class="col"><textarea class="add"
+                            onfocusout="check('Address', 'Addresserror', '*Fill the  Address')" id="Address" type="text"
+                            placeholder="Ender your Address"></textarea>
+                        <p id="Addresserror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Course</label></div>
+                    <div class="col">
+                        <select multiple="multiple" class="sel" id="course"
+                            onfocusout="check('course', 'courseerror', '*Fill your course')">
+                            <optgroup label="Fornt end">
+                                <option class="course" value="C">C</option>
+                                <option class="course" value="HTML">HTML</option>
+                                <option class="course" value="CSS">CSS</option>
+                                <option class="course" value="JS">JavaScript</option>
+                                <option class="course" value="REACT">React</option>
+                                <option class="course" value="ANGULAR">Angular</option>
+                            </optgroup>
+                            <optgroup label="back end">
+                                <option class="course" value="PYTHON">python</option>
+                                <option class="course" value="JAVA">java</option>
+                                <option class="course" value="C++">c++</option>
+                                <option class="course" value="NODE JS">Node js</option>
+                                <option class="course" value="PHP">PHP</option>
+                            </optgroup>
+                        </select>
+                        <p id="courseerror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Qualification</label></div>
+                    <div class="col"><input id="Qualification"
+                            onfocusout="check('Qualification', 'qualierror', '*Choose your Qualification')" class="opt"
+                            list="browser" placeholder="Enter your Qualification" />
+                        <datalist id="browser">
+                            <option value="B.com">
+                            <option value="BBA">
+                            <option value="B.SC">
+                            <option value="B.COM CS">
+                            <option value="M.SC">
+                            <option value="MBA">
+                            <option value="Deplomo">
+                            <option value="MBA">
+                            <option value="B.E">
+                            <option value="M.E">
+                        </datalist>
+                        <p id="qualierror" class="error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Your Photo</label></div>
+                    <div class="col"><input type="file" onfocusout="check('Photo','photoerror','*Upload your photo')"
+                            id="Photo" accept="image/x-png,image/gif,image/jpeg" />
+                        <p id="photoerror" class="error"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <input class="reset" type="reset">
+                <button class="pre" type="button" onclick="previewCheck()"
+                    value="select multiple option">Preview</button>
+                <button class="sub" type="submit" value="submit" id="sub" onclick="Successfull()"
+                    disabled>Submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="previewbox1" style="visibility: hidden;" id="previewbox">
+        <pre class="previewbox" id="preview" style="visibility: hidden;" onfocus></pre>
+    </div>
+
+</body>
+
+<script src="Form Project.js">
+</script>
+
+</html>
